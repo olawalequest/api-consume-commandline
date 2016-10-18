@@ -16,6 +16,6 @@ curl --user "olawalequest" https://api.github.com/users/caspyin
 #using POST to post a file on the user public gist
 curl --user "olawalequest" --request POST --data '{"description":"Andela Bootcamp","public":"true","files":{"sample.txt":{"content":"Bootcamp Demo"}}' https://api.github.com/gists
 
-
-
+# to read data from gist
+curl --user "olawalequest" --data @- https://api.github.com/gists
 
