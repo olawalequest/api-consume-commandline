@@ -12,3 +12,10 @@ curl --include https://api.github.com/users/olawalequest
 # Pass user credential to basic auth to access protected resources associated with user github profile
 # the below line will request for the user password on the command line
 curl --user "olawalequest" https://api.github.com/users/caspyin
+
+#using POST to post a file on the user public gist
+curl --user "olawalequest" --request POST --data '{"description":"Andela Bootcamp","public":"true","files":{"sample.txt":{"content":"Bootcamp Demo"}}' https://api.github.com/gists
+
+
+
+
