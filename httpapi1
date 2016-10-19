@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# for this assignment curl tools will be used to transfer data from or to github server
+# cURL is a tool that provides a library and command-line tool for transferring data using various protocols
+
+# to make a basic get request to my public info on github
+curl https://api.github.com/users/olawalequest
+
+# to include HTTP header information in my public info output on github
+curl --include https://api.github.com/users/olawalequest
+
+# Pass user credential to basic auth to access protected resources associated with user github profile
+# the below line will request for the user password on the command line
+curl --user "olawalequest" https://api.github.com/users/caspyin
+
+#using POST to post a file on the user public gist
+curl --user "olawalequest" --request POST --data '{"description":"Andela Bootcamp","public":"true","files":{"sample.txt":{"content":"Bootcamp Demo"}}' https://api.github.com/gists
+
+# to read data from gist
+curl --user "olawalequest" --data @- https://api.github.com/gists
+
